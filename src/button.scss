@@ -21,7 +21,7 @@
   transition: .1s;
   font-weight: $--button-font-weight;
   @include utils-user-select(none);
-  & + .el-button {
+  & + & {
     margin-left: 10px;
   }
 
@@ -115,7 +115,7 @@
   }
   @include when(round) {
     border-radius: 20px;
-    padding: 12px 23px;
+    padding: 8px 15px;
   }
   @include when(circle) {
     border-radius: 50%;
@@ -136,6 +136,14 @@
   @include m(info) {
     @include button-variant($--button-info-color, $--button-info-fill, $--button-info-border);
   }
+
+  @include m(large) {
+    @include button-size($--button-large-padding-vertical, $--button-large-padding-horizontal, $--button-large-font-size, $--button-large-border-radius);
+    @include when(circle) {
+      padding: $--button-large-padding-vertical;
+    }
+  }
+
   @include m(medium) {
     @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
     @include when(circle) {
@@ -206,6 +214,14 @@
       border-bottom-right-radius: $--button-border-radius;
       border-top-left-radius: $--button-border-radius;
       border-bottom-left-radius: $--button-border-radius;
+
+      &.is-round {
+        border-radius: 20px;
+      }
+
+      &.is-circle {
+        border-radius: 50%;
+      }
     }
     &:not(:first-child):not(:last-child) {
       border-radius: 0;

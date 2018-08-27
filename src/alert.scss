@@ -9,6 +9,7 @@
   border-radius: $--alert-border-radius;
   position: relative;
   background-color: $--color-white;
+  border: 1px solid $--alert-info-border-color;
   overflow: hidden;
   opacity: 1;
   display: flex;
@@ -21,8 +22,8 @@
 
   @include m(success) {
     background-color: $--alert-success-color;
+    border-color: $--alert-success-border-color;
     color: $--color-success;
-
     .el-alert__description {
       color: $--color-success;
     }
@@ -30,6 +31,7 @@
 
   @include m(info) {
     background-color: $--alert-info-color;
+    border-color: $--alert-info-border-color;
     color: $--color-info;
 
     .el-alert__description {
@@ -39,6 +41,7 @@
 
   @include m(warning) {
     background-color: $--alert-warning-color;
+    border-color: $--alert-warning-border-color;
     color: $--color-warning;
 
     .el-alert__description {
@@ -48,6 +51,7 @@
 
   @include m(error) {
     background-color: $--alert-danger-color;
+    border-color: $--alert-danger-border-color;
     color: $--color-danger;
 
     .el-alert__description {
@@ -58,6 +62,11 @@
   @include e(content) {
     display: table-cell;
     padding: 0 8px;
+
+    @include when(with-desc-icon) {
+      padding-left: 15px;
+    }
+
   }
 
   @include e(icon) {
@@ -96,6 +105,12 @@
       font-size: $--alert-close-customed-font-size;
       top: 9px;
     }
+  }
+
+  @include m(banner) {
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 0;
   }
 }
 

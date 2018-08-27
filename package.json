@@ -1,6 +1,6 @@
 {
   "name": "element-theme-antd",
-  "version": "2.4.1",
+  "version": "2.4.6",
   "description": "Element component antd theme.",
   "main": "lib/index.css",
   "style": "lib/index.css",
@@ -13,18 +13,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/icai/theme-antd.git"
+    "url": "git+https://github.com/elvant/theme-antd.git"
   },
   "keywords": [
     "element",
     "theme"
   ],
-  "author": "Terry Cai",
+  "author": "gidcai@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/icai/theme-antd/issues"
+    "url": "https://github.com/elvant/theme-antd/issues"
   },
-  "homepage": "https://github.com/icai/theme-antd#readme",
+  "homepage": "https://github.com/elvant/theme-antd#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-cssmin": "^0.1.7",

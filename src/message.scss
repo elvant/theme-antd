@@ -7,7 +7,7 @@
   border-radius: $--border-radius-base;
   border-width: $--border-width-base;
   border-style: $--border-style-base;
-  border-color: $--border-color-lighter;
+  border-color: $--message-border-color;
   position: fixed;
   left: 50%;
   top: 20px;
@@ -16,6 +16,7 @@
   transition: opacity 0.3s, transform .4s;
   overflow: hidden;
   padding: $--message-padding;
+  box-shadow: $--message-box-shadow;
   display: flex;
   align-items: center;
 
@@ -40,8 +41,8 @@
   }
 
   @include m(success) {
-    background-color: $--color-success-lighter;
-    border-color: $--color-success-light;
+    // background-color: $--color-success-lighter;
+    // border-color: $--color-success-light;
 
     .el-message__content {
       color: $--message-success-color;
@@ -49,8 +50,8 @@
   }
 
   @include m(warning) {
-    background-color: $--color-warning-lighter;
-    border-color: $--color-warning-light;
+    // background-color: $--color-warning-lighter;
+    // border-color: $--color-warning-light;
 
     .el-message__content {
       color: $--message-warning-color;
@@ -58,8 +59,8 @@
   }
 
   @include m(error) {
-    background-color: $--color-danger-lighter;
-    border-color: $--color-danger-light;
+    // background-color: $--color-danger-lighter;
+    // border-color: $--color-danger-light;
 
     .el-message__content {
       color: $--message-danger-color;
