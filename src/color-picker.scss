@@ -242,7 +242,7 @@
   display: inline-block;
   position: relative;
   line-height: normal;
-  height: 40px;
+  height: 32px;
 
   @include when(disabled) {
     .el-color-picker__trigger {
@@ -250,21 +250,20 @@
     }
   }
 
-  @include m(medium) {
-    height: 36px;
-
+  @include m(large) {
+    height: 40px;
     .el-color-picker__trigger {
+      height: 38px;
+      width: 38px;
+    }
+    .el-color-picker__mask {
       height: 36px;
       width: 36px;
     }
-
-    .el-color-picker__mask {
-      height: 34px;
-      width: 34px;
-    }
   }
 
-  @include m(small) {
+
+  @include m(medium) {
     height: 32px;
 
     .el-color-picker__trigger {
@@ -276,14 +275,9 @@
       height: 30px;
       width: 30px;
     }
-
-    .el-color-picker__icon,
-    .el-color-picker__empty {
-      transform: translate3d(-50%, -50%, 0) scale(0.8);
-    }
   }
 
-  @include m(mini) {
+  @include m(small) {
     height: 28px;
 
     .el-color-picker__trigger {
@@ -302,9 +296,28 @@
     }
   }
 
+  @include m(mini) {
+    height: 24px;
+
+    .el-color-picker__trigger {
+      height: 24px;
+      width: 24px;
+    }
+
+    .el-color-picker__mask {
+      height: 22px;
+      width: 22px;
+    }
+
+    .el-color-picker__icon,
+    .el-color-picker__empty {
+      transform: translate3d(-50%, -50%, 0) scale(0.8);
+    }
+  }
+
   @include e(mask) {
-    height: 38px;
-    width: 38px;
+    height: 30px;
+    width: 30px;
     border-radius: 4px;
     position: absolute;
     top: 1px;
@@ -317,8 +330,8 @@
   @include e(trigger) {
     display: inline-block;
     box-sizing: border-box;
-    height: 40px;
-    width: 40px;
+    height: 32px;
+    width: 32px;
     padding: 4px;
     border: 1px solid #e6e6e6;
     border-radius: 4px;

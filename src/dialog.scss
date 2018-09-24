@@ -7,7 +7,7 @@
   position: relative;
   margin: 0 auto 50px;
   background: $--color-white;
-  border-radius: $--border-radius-small;
+  border-radius: $--border-radius-base;
   box-shadow: $--dialog-box-shadow;
   box-sizing: border-box;
   width: 50%;
@@ -45,14 +45,15 @@
     outline: none;
     cursor: pointer;
     font-size: $--message-close-size;
-
+    
     .el-dialog__close {
-      color: $--color-info;
+      font-weight: 700;
+      color: $--dialog-close-color;
     }
 
     &:focus, &:hover {
       .el-dialog__close {
-        color: $--color-primary;
+        color: $--dialog-close-hover-color;
       }
     }
   }
@@ -87,6 +88,20 @@
 
     @include e(footer) {
       text-align: inherit;
+    }
+  }
+
+  @include when(border) {
+    @include e(header) {
+      padding: $--dialog-padding-header;
+      border-bottom: $--border-width-base $--border-style-base $--border-color-split;
+    }
+    @include e(body) {
+      padding: $--dialog-padding-body;
+    }
+    @include e(footer) {
+      padding: $--dialog-padding-footer;
+      border-top: $--border-width-base $--border-style-base $--border-color-split;
     }
   }
 }

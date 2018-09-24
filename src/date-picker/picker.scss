@@ -42,7 +42,7 @@
     margin-left: -5px;
     color: $--color-text-placeholder;
     float: left;
-    line-height: 32px;
+    line-height: 24px;
   }
 
   .el-range-input {
@@ -69,7 +69,7 @@
     padding: 0 5px;
     margin: 0;
     text-align: center;
-    line-height: 32px;
+    line-height: 24px;
     font-size: 14px;
     width: 5%;
     color: $--color-text-primary;
@@ -81,7 +81,7 @@
     width: 25px;
     display: inline-block;
     float: right;
-    line-height: 32px;
+    line-height: 24px;
   }
 }
 
@@ -104,13 +104,31 @@
     }
   }
 
+  @include m(large) {
+    &.el-input__inner {
+      height: $--input-large-height;
+    }
+    .el-range-separator {
+      line-height: 32px;
+      font-size: $--input-large-font-size;
+    }
+    .el-range-input {
+      font-size: $--input-large-font-size;
+    }
+    .el-range__icon,
+    .el-range__close-icon {
+      line-height: 32px;
+    }
+  }
+
+
   @include m(medium) {
     &.el-input__inner {
       height: $--input-medium-height;
     }
 
     .el-range-separator {
-      line-height: 28px;
+      line-height: 24px;
       font-size: $--input-medium-font-size;
     }
 
@@ -120,7 +138,7 @@
 
     .el-range__icon,
     .el-range__close-icon {
-      line-height: 28px;
+      line-height: 24px;
     }
   }
 

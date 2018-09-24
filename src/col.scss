@@ -154,3 +154,25 @@
     }
   }
 }
+
+@include res(xxl) {
+  .el-col-xxl-0 {
+    display: none;
+  }
+  @for $i from 0 through 24 {
+    .el-col-xxl-#{$i} {
+      width: (1 / 24 * $i * 100) * 1%;
+    }
+    .el-col-xxl-offset-#{$i} {
+      margin-left: (1 / 24 * $i * 100) * 1%;
+    }
+    .el-col-xxl-pull-#{$i} {
+      position: relative;
+      right: (1 / 24 * $i * 100) * 1%;
+    }
+    .el-col-xxl-push-#{$i} {
+      position: relative;
+      left: (1 / 24 * $i * 100) * 1%;
+    }
+  }
+}

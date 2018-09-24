@@ -33,6 +33,8 @@
     &:focus {
       outline: none;
       border-color: $--input-focus-border;
+      box-shadow: $--input-outline-offset $--outline-blur-size $--outline-width $--input-outline-color;
+      border-right-width: 1px !important;
     }
   }
 
@@ -97,6 +99,8 @@
     &:focus {
       outline: none;
       border-color: $--input-focus-border;
+      box-shadow: $--input-outline-offset $--outline-blur-size $--outline-width $--input-outline-color;
+      border-right-width: 1px !important;
     }
   }
 
@@ -224,6 +228,7 @@
   display: inline-table;
   width: 100%;
   border-collapse: separate;
+  border-spacing:0;
 
   > .el-input__inner {
     vertical-align: middle;

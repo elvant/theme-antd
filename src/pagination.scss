@@ -7,7 +7,7 @@
   white-space: nowrap;
   padding: 2px 5px;
   color: $--pagination-color;
-  font-weight: bold;
+  // font-weight: bold;
   @include utils-clearfix;
 
   span:not([class*=suffix]),
@@ -17,6 +17,10 @@
     min-width: $--pagination-button-width;
     height: $--pagination-button-height;
     line-height: $--pagination-button-height;
+    border-radius: $--border-radius-base;
+    list-style: none;
+    text-align: center;
+    transition: all .3s;
     vertical-align: top;
     box-sizing: border-box;
   }
@@ -54,11 +58,13 @@
 
     &:hover {
       color: $--pagination-hover-fill;
+      border-color: $--color-primary;
     }
 
     &:disabled {
       color: $--pagination-button-disabled-color;
       background-color: $--pagination-button-disabled-fill;
+      border-color: $--border-color-base;
       cursor: not-allowed;
     }
   }
@@ -71,6 +77,10 @@
     cursor: pointer;
     margin: 0;
     color: $--pagination-button-color;
+    border: 1px solid $--border-color-base;
+    border-radius: $--border-radius-base;
+    outline: none;
+    transition: all .3s;
 
     .el-icon {
       display: block;
@@ -80,11 +90,13 @@
   }
 
   .btn-prev {
-    padding-right: 12px;
+    margin-right: 8px;
+    // padding-right: 12px;
   }
 
   .btn-next {
-    padding-left: 12px;    
+    // margin-left: 8px;
+    // padding-left: 12px;    
   }
 
   .el-pager li.disabled {
@@ -99,11 +111,13 @@
     .el-pager li.btn-quicknext,
     .el-pager li.btn-quickprev,
     .el-pager li:last-child {
+      margin-right: 0px;
       border-color: transparent;
-      font-size: 12px;
+      font-size: 14px;
       line-height: 22px;
-      height: 22px;
-      min-width: 22px;
+      height: 24px;
+      min-width: 24px;
+      padding: 0 5px;
     }
 
     .arrow.disabled {
@@ -117,14 +131,35 @@
 
     span:not([class*=suffix]),
     button {
-      height: 22px;
-      line-height: 22px;
+      height: 24px;
+      line-height: 24px;
+    }
+
+    .btn-prev,
+    .btn-next {
+      &:disabled,
+      &:hover,
+      &.active {
+         border-color: transparent;
+      }
+    }
+
+    .el-pager li {
+      &:hover {
+        border-color: transparent;
+      }
+      &.active,
+      &.active:hover {
+        color: $--pagination-hover-fill;
+        cursor: default;
+        border-color: $--color-primary;
+      }
     }
 
     @include e(editor) {
-      height: 22px;
+      height: 24px;
       &.el-input .el-input__inner {
-        height: 22px;
+        height: 24px;
       }
     }
   }
@@ -250,21 +285,31 @@
   li {
     padding: 0 4px;
     background: $--pagination-fill;
-    vertical-align: top;
+    // vertical-align: top;
     display: inline-block;
     font-size: $--pagination-font-size;
     min-width: $--pagination-button-width;
     height: $--pagination-button-height;
-    line-height: $--pagination-button-height;
+    line-height: $--pagination-button-height - 2px;
     cursor: pointer;
     box-sizing: border-box;
     text-align: center;
     margin: 0;
 
+    border-radius: $--border-radius-base;
+    user-select: none;
+    list-style: none;
+    vertical-align: middle;
+    border: $--border-width-base $--border-style-base $--border-color-base;
+    margin-right: 8px;
+    font-family: $--pagination-font-family;
+    outline: 0;
+
     &.btn-quicknext,
     &.btn-quickprev {
       line-height: 28px;
       color: $--pagination-button-color;
+      border-color: transparent;
 
       &.disabled {
         color: $--color-text-placeholder;
@@ -273,23 +318,24 @@
 
     &.btn-quickprev:hover {
       cursor: pointer;
+      border-color: transparent;
     }
 
     &.btn-quicknext:hover {
       cursor: pointer;
+      border-color: transparent;
     }
 
-    &.active + li {
-      border-left: 0;
-    }
 
     &:hover {
       color: $--pagination-hover-fill;
+      border-color: $--color-primary;
     }
 
     &.active {
       color: $--pagination-hover-fill;
       cursor: default;
+      border-color: $--color-primary;
     }
   }
 }

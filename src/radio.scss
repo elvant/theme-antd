@@ -36,6 +36,21 @@
     }
   }
 
+  @include m(large) {
+    &.is-bordered {
+      padding: $--radio-bordered-large-padding;
+      border-radius: $--button-large-border-radius;
+      height: $--radio-bordered-large-height;
+      .el-radio__label {
+        font-size: $--button-large-font-size;
+      }
+      .el-radio__inner {
+        height: $--radio-bordered-large-input-height;
+        width: $--radio-bordered-large-input-width;
+      }
+    }
+  }
+
   @include m(medium) {
     &.is-bordered {
       padding: $--radio-bordered-medium-padding;
@@ -126,21 +141,44 @@
     @include when(checked) {
       .el-radio__inner {
         border-color: $--radio-checked-input-border-color;
-        background: $--radio-checked-icon-color;
-
+        // background: $--radio-checked-icon-color;
         &::after {
-          transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(0.875);
         }
       }
 
       & + .el-radio__label {
         color: $--radio-checked-text-color;
       }
+      &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          border: 1px solid $--radio-checked-input-border-color;
+          content: '';
+          animation: antRadioEffect 0.36s ease-in-out;
+          animation-fill-mode: both;
+          visibility: hidden;
+          box-sizing: border-box;
+      }
     }
 
     @include when(focus) {
       .el-radio__inner {
         border-color: $--radio-input-border-color-hover;
+      }
+    }
+    &:hover {
+      &::after {
+        visibility: visible;
+      }
+    }
+    &::after {
+      .el-radio:hover & {
+        visibility: visible;
       }
     }
   }
@@ -152,7 +190,7 @@
     background-color: $--radio-input-fill;
     position: relative;
     cursor: pointer;
-    display: inline-block;
+    display: block;
     box-sizing: border-box;
 
     &:hover {
@@ -160,10 +198,10 @@
     }
 
     &::after {
-      width: 4px;
-      height: 4px;
+      width: 8px;
+      height: 8px;
       border-radius: $--radio-input-border-radius;
-      background-color: $--color-white;
+      background-color: $--radio-checked-icon-color;
       content: "";
       position: absolute;
       left: 50%;
@@ -194,5 +232,19 @@
   @include e(label) {
     font-size: $--radio-font-size;
     padding-left: 10px;
+  }
+}
+
+
+@keyframes antRadioEffect {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1.6);
+    transform: scale(1.6);
+    opacity: 0;
   }
 }

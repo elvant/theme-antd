@@ -5,14 +5,16 @@
   background-color: $--tag-fill;
   display: inline-block;
   padding: $--tag-padding;
-  height: 32px;
-  line-height: 30px;
+  // height: 32px;
+  // line-height: 30px;
   font-size: $--tag-font-size;
   color: $--tag-color;
   border-radius: $--tag-border-radius;
   box-sizing: border-box;
   border: 1px solid $--tag-border;
   white-space: nowrap;
+  height: 28px;
+  line-height: 26px;
 
   .el-icon-close {
     border-radius: 50%;
@@ -27,6 +29,7 @@
     top: -1px;
     right: -5px;
     color: $--tag-color;
+    transform: scale(.8);
 
     &::before {
       display: block;
@@ -114,10 +117,17 @@
     }
   }
 
+  @include m(large) {
+    height: 32px;
+    line-height: 30px;
+    .el-icon-close {
+      transform: scale(1);
+    }
+  }
+
   @include m(medium) {
     height: 28px;
     line-height: 26px;
-
     .el-icon-close {
       transform: scale(.8);
     }
