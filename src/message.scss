@@ -36,7 +36,7 @@
 
   @include m(info) {
     .el-message__content {
-      color: $--message-info-color;
+      color: $--message-info-font-color;
     }
   }
 
@@ -45,7 +45,7 @@
     // border-color: $--color-success-light;
 
     .el-message__content {
-      color: $--message-success-color;
+      color: $--message-success-font-color;
     }
   }
 
@@ -54,7 +54,7 @@
     // border-color: $--color-warning-light;
 
     .el-message__content {
-      color: $--message-warning-color;
+      color: $--message-warning-font-color;
     }
   }
 
@@ -63,7 +63,7 @@
     // border-color: $--color-danger-light;
 
     .el-message__content {
-      color: $--message-danger-color;
+      color: $--message-danger-font-color;
     }
   }
 
@@ -86,7 +86,7 @@
     right: 15px;
     transform: translateY(-50%);
     cursor: pointer;
-    color: $--message-close-color;
+    color: $--message-close-icon-color;
     font-size: $--message-close-size;
 
     &:focus {
@@ -98,19 +98,19 @@
   }
 
   & .el-icon-success {
-    color: $--message-success-color;
+    color: $--message-success-font-color;
   }
 
   & .el-icon-error {
-    color: $--message-danger-color;
+    color: $--message-danger-font-color;
   }
 
   & .el-icon-info {
-    color: $--message-info-color;
+    color: $--message-info-font-color;
   }
 
   & .el-icon-warning {
-    color: $--message-warning-color;
+    color: $--message-warning-font-color;
   }
 }
 

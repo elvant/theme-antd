@@ -8,7 +8,7 @@
   // height: 32px;
   // line-height: 30px;
   font-size: $--tag-font-size;
-  color: $--tag-color;
+  color: $--tag-font-color;
   border-radius: $--tag-border-radius;
   box-sizing: border-box;
   border: 1px solid $--tag-border;
@@ -30,13 +30,14 @@
     right: -5px;
     color: $--tag-color;
     transform: scale(.8);
+    color: $--tag-font-color;
 
     &::before {
       display: block;
     }
 
     &:hover {
-      background-color: $--tag-color;
+      background-color: $--tag-default-hover-background-color;
       color: $--color-white;
     }
   }

@@ -16,6 +16,21 @@
   align-items: center;
   transition: opacity .2s;
 
+  @include when(light) {
+    .el-alert__closebtn {
+      color: $--color-text-placeholder;
+    }
+  }
+
+  @include when(dark) {
+    .el-alert__closebtn {
+      color: $--color-white;
+    }
+    .el-alert__description {
+      color: $--color-white;
+    }
+  }
+
   @include when(center) {
     justify-content: center;
   }
@@ -27,12 +42,37 @@
     .el-alert__description {
       color: $--color-success;
     }
+    &.is-light {
+      background-color: $--alert-success-color;
+      color: $--color-success;
+
+      .el-alert__description {
+        color: $--color-success;
+      }
+    }
+
+    &.is-dark {
+      background-color: $--color-success;
+      color: $--color-white;
+    }
   }
 
   @include m(info) {
     background-color: $--alert-info-color;
     border-color: $--alert-info-border-color;
     color: $--color-info;
+    .el-alert__description {
+      color: $--color-info;
+    }
+    &.is-light {
+      background-color: $--alert-info-color;
+      color: $--color-info;
+    }
+
+    &.is-dark {
+      background-color: $--color-info;
+      color: $--color-white;
+    }
 
     .el-alert__description {
       color: $--color-info;
@@ -43,9 +83,22 @@
     background-color: $--alert-warning-color;
     border-color: $--alert-warning-border-color;
     color: $--color-warning;
-
     .el-alert__description {
       color: $--color-warning;
+    }
+
+    &.is-light {
+      background-color: $--alert-warning-color;
+      color: $--color-warning;
+
+      .el-alert__description {
+        color: $--color-warning;
+      }
+    }
+
+    &.is-dark {
+      background-color: $--color-warning;
+      color: $--color-white;
     }
   }
 
@@ -56,6 +109,19 @@
 
     .el-alert__description {
       color: $--color-danger;
+    }
+    &.is-light {
+      background-color: $--alert-danger-color;
+      color: $--color-danger;
+
+      .el-alert__description {
+        color: $--color-danger;
+      }
+    }
+
+    &.is-dark {
+      background-color: $--color-danger;
+      color: $--color-white;
     }
   }
 
@@ -93,7 +159,6 @@
 
   @include e(closebtn) {
     font-size: $--alert-close-font-size;
-    color: $--color-text-placeholder;
     opacity: 1;
     position: absolute;
     top: 12px;
