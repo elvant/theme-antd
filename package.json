@@ -1,6 +1,6 @@
 {
   "name": "element-theme-antd",
-  "version": "2.8.2",
+  "version": "2.13.0",
   "description": "Element component antd theme.",
   "main": "lib/index.css",
   "style": "lib/index.css",
